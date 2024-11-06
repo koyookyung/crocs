@@ -1202,6 +1202,9 @@ body {
     .header .inner .notice_bt p {
         font-size: 14px;
     }
+    .header .inner .nav_mobile {
+        top: 100px;
+    }
 
     /* main_visual */
     .main_visual {
@@ -1822,6 +1825,9 @@ body {
     .header .inner .notice_bt p {
         font-size: 12px;
         line-height: 32px;
+    }
+    .header .inner .nav_mobile {
+        top: 80px;
     }
 
     /* main_visual */
