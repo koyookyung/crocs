@@ -1226,17 +1226,17 @@ body {
     .contents .wrap .sale h2 {
         font-size: 60px;
         margin-bottom: 10px;
-        -webkit-text-stroke: 3px #000;
+        -webkit-text-stroke: 2px #000;
     }
     .contents .wrap .new h2 {
         font-size: 60px;
         margin-bottom: 10px;
-        -webkit-text-stroke: 3px #000;
+        -webkit-text-stroke: 2px #000;
     }
     .contents .wrap .limit h2 {
         font-size: 60px;
         margin-bottom: 10px;
-        -webkit-text-stroke: 3px #000;
+        -webkit-text-stroke: 2px #000;
     }
     .contents .wrap .image {
         border-radius: 25px;
@@ -1309,7 +1309,7 @@ body {
         color: #fff;
         -webkit-text-stroke: 0.1px #000;
         text-align: center;
-        -webkit-text-stroke: 3px #000;
+        -webkit-text-stroke: 2px #000;
     }
     .collection_mobile .inner .md .wrap_left .titl p {
         font-size: 18px;
@@ -1396,7 +1396,7 @@ body {
     }
     .jibbitz .inner .title h2 {
         font-size: 60px;
-        -webkit-text-stroke: 3px #000;
+        -webkit-text-stroke: 2px #000;
     }
     .jibbitz .inner .title .tag {
         padding-bottom: 10px;
@@ -1448,7 +1448,7 @@ body {
     }
     .collabo .inner .title h2 {
         font-size: 60px;
-        -webkit-text-stroke: 3px #000;
+        -webkit-text-stroke: 2px #000;
     }
     .collabo .inner .title p {
         font-size: 18px;
