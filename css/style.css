@@ -151,6 +151,9 @@ a {
 body {
     color: #333;
 }
+body.on {
+    overflow: hidden;
+}
 .mobile {
     display: none;
 }
@@ -197,6 +200,11 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.header_wrap .header_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .header_wrap .logo {
     height: 60px;
 }
@@ -209,7 +217,7 @@ body {
     display: block;
 }
 
-/* menu_pc */
+/* #menu_bg */
 #menu_bg {
     background-color: #fff;
     position: absolute;
@@ -220,6 +228,25 @@ body {
     display: none;
     z-index: 2;
 }
+#menu_bg .inner {
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    height: 100%;
+    position: relative;
+}
+#menu_bg .inner .image {
+    position: absolute;
+    right: 30px;
+    top: 75px;
+}
+#menu_bg .inner .image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* menu_pc */
 .header_wrap .menu_pc .gnb {
     display: flex;
 }
@@ -231,9 +258,9 @@ body {
     font-size: 16px;
     font-weight: bold;
     line-height: 80px;
-    padding: 30px;
+    padding: 20px;
 }
-.header_wrap .menu_pc .gnb > li > .depth01:hover {
+.header_wrap .menu_pc .gnb > li:hover .depth01 {
     color: #78B60B;
 }
 .header_wrap .menu_pc .gnb > li > .depth02 {
@@ -352,6 +379,7 @@ body {
     max-height: 524px;
     height: 36.38vw;
     object-fit: cover;
+    border-radius: 50px;
 }
 .contents .wrap .new {
     width: 33%;
@@ -399,8 +427,12 @@ body {
     overflow: hidden;
     border-radius: 50px;
 }
+.contents .wrap img {
+    transition: 0.7s;
+}
 .contents .wrap img:hover {
     transform: scale(1.1);
+    transition: 0.7s;
 }
 
 /* collection */
@@ -519,8 +551,12 @@ body {
     object-fit: cover;
     border-radius: 50px;
 }
+.collection_pc .inner img {
+    transition: 0.7s;
+}
 .collection_pc .inner img:hover {
     transform: scale(1.1);
+    transition: 0.7s;
 }
 
 /* text_slide */
@@ -589,22 +625,18 @@ body {
     font-size: 20px;
     font-weight: bold;
 }
+.jibbitz .inner .title .tag li.active {
+    background-color: #EA3C96;
+    color:#fff;
+}
+.jibbitz .inner .title .tag li.active::before {
+    background-color: #fff;
+}
 .jibbitz .inner .title .tag ul > li {
     position: relative;
 }
 .jibbitz .inner .title .tag ul > li:hover {
-    background-color: #EA3C96;
-    color: #fff;
-}
-.jibbitz .inner .title .tag ul > li:hover::before {
-    background-color: #fff;
-}
-.jibbitz .inner .title .tag ul > li:nth-child(2) {
-    background-color: #EA3C96;
-    color: #fff;
-}
-.jibbitz .inner .title .tag ul > li:nth-child(2)::before {
-    background-color: #fff;
+    cursor: pointer;
 }
 .jibbitz .inner .title .tag  ul > li::before {
     content: '';
@@ -625,6 +657,10 @@ body {
     flex-wrap: wrap;
     gap: 12px;
     row-gap: 17px;
+    display: none;
+}
+.jibbitz .inner .pc_item_wrap.active {
+    display: flex;
 }
 .jibbitz .inner .pc_item_wrap .item {
     width: 19%;
@@ -651,7 +687,7 @@ body {
     border-radius: 0 0 50px 50px;
     text-align: center;
     padding-top: 15px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -659,6 +695,14 @@ body {
 }
 .jibbitz .inner .pc_item_wrap .item:hover .text {
     display: block;
+}
+.jibbitz .inner .pc_item_wrap .item .image .text span {
+    color: #D70000;
+    margin-right: 10px;
+    font-size: 18px;
+}
+.jibbitz .inner .pc_item_wrap .item .image .text strong {
+    font-size: 18px;
 }
 .jibbitz .inner .btn {
     width: 175px;
@@ -1000,26 +1044,85 @@ body {
         left: 100%;
         top: 120px;
         background-color: #eee;
-        padding: 50px;
         z-index: 9;
     }
     .header .inner .nav_mobile .gnb .depth01 {
-        line-height: 100px;
+        width: 100%;
         height: 100px;
+        line-height: 100px;
         font-size: 20px;
         font-weight: bold;
+        border-bottom: 1px solid #333;
+        display: block;
+        padding-left: 20px;
     }
-    .header .inner .nav_mobile .gnb > li {
-        border-bottom: 1px solid #000;
+    .header .inner .nav_mobile .gnb .depth01 {
+        position: relative;
+    }
+    .header .inner .nav_mobile .gnb .depth01::before {
+        content: '';
+        background: url('../img/로고,아이콘/다음버튼.png') center center / auto no-repeat;
+        /* 100%만 작성했을 때 => 가로값이 기준이 됨(하나만 썼을 경우) / auto 추가 했을 때(두개 썼을 경우) => 세로값에도 맞춰지기 때문에 이미지가 깨지지 않음 */
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+    .header .inner .nav_mobile .gnb.on > li.on {
+        display: none;
+    }
+    .header .inner .nav_mobile .gnb.on .depth01 {
+        text-align: center;
+    }
+    .header .inner .nav_mobile .gnb.on .depth01::before {
+        content: '';
+        background: url('../img/로고,아이콘/이전버튼.png') center center / auto 100% no-repeat;
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+    .header .inner .nav_mobile .gnb .depth02 {
+        display: none;
+    }
+    .header .inner .nav_mobile .gnb.on .depth02 {
+        display: block;
+    }
+    .header .inner .nav_mobile .gnb.on .depth02 li {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        font-size: 20px;
+        border-bottom: 1px solid #999;
+        padding-left: 10px;
+    }
+    .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:first-child {
+        border-bottom: none;
+    }
+    .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:nth-child(2) {
+        border-bottom: none;
+        background-color: #ddd;
+    }
+    .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:nth-child(6) {
+        border-bottom: none;
+    }
+    .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:nth-child(7) {
+        border-bottom: none;
+        background-color: #ddd;
+    }
+    .header .inner .nav_mobile .gnb.on .depth02 li:first-child {
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
     }
     .header .inner .nav_mobile .gnb .depth02 > li {
         padding-bottom: 10px;
-    }
-    .header .inner .nav_mobile .gnb > li:nth-child(4) li:nth-child(1) {
-        font-weight: bold;
-    }
-    .header .inner .nav_mobile .gnb > li:nth-child(4) li:nth-child(6) {
-        font-weight: bold;
     }
     .header .inner .nav_mobile.active {
         left: 0;
@@ -1095,6 +1198,9 @@ body {
     .jibbitz .inner .pc_item_wrap {
         display: none;
     }
+    .jibbitz .inner .pc_item_wrap.active {
+        display: none;
+    }
     .jibbitz .inner .mobile_item_wrap {
         margin-top: 70px;
         display: flex;
@@ -1102,6 +1208,10 @@ body {
         flex-wrap: wrap;
         gap: 10px;
         row-gap: 10px;
+        display: none;
+    }
+    .jibbitz .inner .mobile_item_wrap.active {
+        display: flex;
     }
     .jibbitz .inner .mobile_item_wrap .item {
         width: 19%;
@@ -1132,6 +1242,10 @@ body {
         position: absolute;
         left: 0;
         bottom: 0;
+    }
+    .jibbitz .inner .mobile_item_wrap .item .image .text span {
+        color: #D70000;
+        margin-right: 5px;
     }
 
     /* collabo */
@@ -1595,7 +1709,7 @@ body {
     /* contents */
     .contents .wrap {
         overflow-x: auto;
-        justify-content: center;
+        justify-content: flex-start;
     }
     .contents .wrap::-webkit-scrollbar {
         display: none;
@@ -1688,7 +1802,6 @@ body {
     .jibbitz .inner .mobile_item_wrap {
         flex-wrap: nowrap;
         overflow-x: auto;
-        justify-content: center;
     }
     .jibbitz .inner .mobile_item_wrap::-webkit-scrollbar {
         display: none;
@@ -1717,7 +1830,6 @@ body {
     .event .wrap {
         overflow-x: auto;
         gap: 10px;
-        justify-content: center;
     }
     .event .wrap::-webkit-scrollbar {
         display: none;
@@ -1785,6 +1897,15 @@ body {
     }
     .bt_footer_mobile .inner .top ul:nth-child(2) li:nth-child(2)::after {
         display: none;
+    }
+}
+
+
+/* 570 */
+@media screen and (max-width: 570px) {
+
+    .jibbitz .inner .title .tag ul {
+        justify-content: flex-start;
     }
 }
 
@@ -1980,8 +2101,8 @@ body {
         min-height: 52px;
     }
     .event .wrap .item:nth-child(3) img {
-        min-width: 64px;
-        min-height: 55px;
+        min-width: 60px;
+        min-height: 51px;
     }
 
     /* top_footer */
