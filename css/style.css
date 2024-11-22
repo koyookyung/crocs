@@ -1104,19 +1104,28 @@ body.on {
         border-bottom: 1px solid #999;
         padding-left: 10px;
     }
+    .header .inner .nav_mobile .gnb.on .depth02 li:hover {
+        color: #78B60B;
+    }
     .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:first-child {
         border-bottom: none;
     }
     .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:nth-child(2) {
         border-bottom: none;
-        background-color: #ddd;
+        background-color: #bbbbbb;
+    }
+    .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:nth-child(2):hover {
+        color: inherit;
     }
     .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:nth-child(6) {
         border-bottom: none;
     }
     .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:nth-child(7) {
         border-bottom: none;
-        background-color: #ddd;
+        background-color: #bbb;
+    }
+    .header .inner .nav_mobile .gnb.on > li:nth-child(4) .depth02 li:nth-child(7):hover {
+        color: inherit;
     }
     .header .inner .nav_mobile .gnb.on .depth02 li:first-child {
         width: 100%;
