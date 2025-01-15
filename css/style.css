@@ -1631,6 +1631,7 @@ body.on {
     }
     .insta .inner .title h2 {
         font-size: 60px;
+        -webkit-text-stroke: 1px #000;
     }
     .insta .inner .title p {
         font-size: 18px;
