@@ -1604,7 +1604,7 @@ body.on {
         width: 100%;
         max-height: 660px;
         height: 68.75vw;
-        margin-top: 40px;
+        margin-top: 30px;
     }
     .collabo .inner .bg .item_wrap {
         max-width: 960px;
@@ -1638,7 +1638,7 @@ body.on {
         font-size: 18px;
     }
     .insta .inner .image_wrap {
-        margin-top: 40px;
+        margin-top: 30px;
     }
     .insta .inner .image_wrap ul li::after {
         border-radius: 25px;
