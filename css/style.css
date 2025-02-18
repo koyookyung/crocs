@@ -363,6 +363,9 @@ body.on {
 .contents .wrap .sale {
     width: 33%;
 }
+.contents .wrap .sale:hover h2 {
+    color:#94E80B;
+}
 .contents .wrap .sale h2 {
     font-family: 'LOTTERIACHABA1';
     font-size: 80px;
@@ -370,9 +373,6 @@ body.on {
     -webkit-text-stroke: 0.1px #000;
     text-align: center;
     margin-bottom: 40px;
-}
-.contents .wrap .sale h2:hover {
-    color:#94E80B;
 }
 .contents .wrap .sale img {
     width: 100%;
@@ -384,6 +384,9 @@ body.on {
 .contents .wrap .new {
     width: 33%;
 }
+.contents .wrap .new:hover h2 {
+    color:#94E80B;
+}
 .contents .wrap .new h2 {
     font-family: 'LOTTERIACHABA1';
     font-size: 80px;
@@ -391,9 +394,6 @@ body.on {
     -webkit-text-stroke: 0.1px #000;
     text-align: center;
     margin-bottom: 40px;
-}
-.contents .wrap .new h2:hover {
-    color:#94E80B;
 }
 .contents .wrap .new img {
     width: 100%;
@@ -405,6 +405,9 @@ body.on {
 .contents .wrap .limit {
     width: 33%;
 }
+.contents .wrap .limit:hover h2 {
+    color:#94E80B;
+}
 .contents .wrap .limit h2 {
     font-family: 'LOTTERIACHABA1';
     font-size: 80px;
@@ -412,9 +415,6 @@ body.on {
     -webkit-text-stroke: 0.1px #000;
     text-align: center;
     margin-bottom: 40px;
-}
-.contents .wrap .limit h2:hover {
-    color:#94E80B;
 }
 .contents .wrap .limit img {
     width: 100%;
@@ -710,7 +710,7 @@ body.on {
     background-color: #EA3C96;
     color: #fff;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 14px;
     border-radius: 50px;
     border: 2px solid #000;
     position: relative;
@@ -1581,7 +1581,7 @@ body.on {
     .jibbitz .inner .btn {
         width: 143px;
         height: 43px;
-        padding-top: 7px;
+        padding-top: 10px;
         margin: 40px auto 0;
     }
     .jibbitz .inner .btn::before {
